@@ -14,6 +14,8 @@ La persistencia de los datos se maneja completamente con **Firebase Firestore** 
 * **Enrutamiento:** React Router DOM (para la navegación entre vistas)
 * **Backend (BaaS):** Firebase Firestore (como base de datos NoSQL)
 * **Despliegue:** Vercel
+* **API Externa:** The Movie Database (TMDB) API (para autocompletado inteligente de datos de películas).
+
 
 ---
 
