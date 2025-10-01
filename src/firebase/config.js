@@ -1,6 +1,10 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
+//  --- CLAVE DE API EXTERNA ---
+// clave de TMDB para el autocompletado en el formulario
+export const TMDB_API_KEY = "55e1ffd4fb6d05c4713bf5c04a4dba52";
+
 //  CREDENCIALES DE FIREBASE
 const firebaseConfig = {
   apiKey: "AIzaSyDaXAP2IP8YZBxesYZrOs3dmqaDDqDhhKg",
