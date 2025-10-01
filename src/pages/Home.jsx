@@ -69,7 +69,7 @@ const Home = () => {
 
     return (
         <Container className="my-5">
-            <h2 className="mb-4">🎬 Mi Colección de Películas</h2>
+            <h2 className="mb-4">🎬 Mi Colección de Películas Favoritas</h2>
             <Row xs={1} md={2} lg={3} className="g-4">
                 {peliculas.map((pelicula) => (
                     <Col key={pelicula.id}>
