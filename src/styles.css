@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* --- ESTILOS GLOBALES --- */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #e7e6e6; /* Gris muy claro para el fondo */
+    color: #343a40; /* Texto oscuro */
+}
+
+h1, h2, h3 {
+    font-weight: 600; 
+    color: #206bbb; /* Azul primario */
+}
+
+/* Pequeño efecto de elevación en contenedores principales */
+.container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* --- ESTILOS DE NAVBAR --- */
+.custom-navbar {
+    border-bottom: 4px solid #850000; 
+    position: sticky;
+    top: 0;
+    z-index: 1020; 
+}
+
+.custom-navbar .nav-link {
+    transition: color 0.3s ease;
+}
+
+.custom-navbar .nav-link:hover {
+    color: #ffc107 !important; /* Resalta en amarillo */
+}
+
+/* --- ESTILOS DE TARJETA (Home.jsx) --- */
+.card {
+    border: none;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; 
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Pequeño desplazamiento al pasar el ratón */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important; /* Sombra más pronunciada */
+}
+
+.card-img-top {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+/* --- ESTILOS DE FOOTER --- */
+.custom-footer {
+    background-color: #e9ecef; /* Gris claro */
+    border-top: 1px solid #dee2e6;
+}
+/* Estilo para el contenedor principal del detalle */
+.detail-container {
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Sombra más suave */
+}
+
+/* Estilo para hacer la reseña más legible */
+.detail-container p {
+    line-height: 1.8;
+}
+
+/* Color para los botones de acción */
+.btn-warning {
+    /* Color de borde y fondo personalizado para el botón Editar */
+    border-color: #ffc107 !important;
+}
+
+.btn-danger {
+    /* Color de borde y fondo personalizado para el botón Eliminar */
+    border-color: #dc3545 !important;
+}
