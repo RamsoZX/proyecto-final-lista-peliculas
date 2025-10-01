@@ -31,7 +31,7 @@ h1, h2, h3 {
 }
 
 .custom-navbar .nav-link:hover {
-    color: #ffc107 !important; /* Resalta en amarillo */
+    color: #ffc107 !important; 
 }
 
 /* --- ESTILOS DE TARJETA (Home.jsx) --- */
@@ -43,8 +43,8 @@ h1, h2, h3 {
 }
 
 .card:hover {
-    transform: translateY(-5px); /* Pequeño desplazamiento al pasar el ratón */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important; /* Sombra más pronunciada */
+    transform: translateY(-5px); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important; 
 }
 
 .card-img-top {
@@ -58,7 +58,7 @@ h1, h2, h3 {
 
 /* --- ESTILOS DE FOOTER --- */
 .custom-footer {
-    background-color: #e9ecef; /* Gris claro */
+    background-color: #e9ecef; 
     border-top: 1px solid #dee2e6;
 }
 /* Estilo para el contenedor principal del detalle */
@@ -66,7 +66,7 @@ h1, h2, h3 {
     background-color: #ffffff;
     border-radius: 15px;
     padding: 30px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Sombra más suave */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); 
 }
 
 /* Estilo para hacer la reseña más legible */
@@ -76,11 +76,9 @@ h1, h2, h3 {
 
 /* Color para los botones de acción */
 .btn-warning {
-    /* Color de borde y fondo personalizado para el botón Editar */
     border-color: #ffc107 !important;
 }
 
 .btn-danger {
-    /* Color de borde y fondo personalizado para el botón Eliminar */
     border-color: #dc3545 !important;
 }

@@ -1,13 +1,10 @@
 import { collection, addDoc, getDocs, doc, getDoc, deleteDoc, updateDoc } from "firebase/firestore";
-import { db } from "../firebase/config"; // Importamos la instancia de Firestore
-
-// Referencia a la colección 'peliculas'
+import { db } from "../firebase/config"; 
 const peliculasCollection = collection(db, "peliculas");
 
-// Función para guardar una nueva película en Firestore
 export const crearPelicula = async (datosPelicula) => {
     try {
-        // addDoc recibe la referencia de la colección y el objeto de datos
+        // addDoc añade un nuevo documento con un ID generado automáticamente
         const docRef = await addDoc(peliculasCollection, datosPelicula);
         console.log("Documento escrito con ID: ", docRef.id);
         return docRef.id;
@@ -22,10 +19,10 @@ export const obtenerPeliculas = async () => {
     try {
         const querySnapshot = await getDocs(peliculasCollection);
         
-        // Mapeamos los resultados para obtener solo los datos y el ID del documento
+        // Mapeamos los documentos para incluir el ID junto con los datos
         const peliculas = querySnapshot.docs.map(doc => ({
-            id: doc.id, // El ID único del documento es crucial
-            ...doc.data() // El resto de los datos
+            id: doc.id, 
+            ...doc.data() 
         }));
         
         return peliculas;
@@ -35,17 +32,15 @@ export const obtenerPeliculas = async () => {
     }
 };
 
-// Función para obtener una sola película por su ID de Firestore
+
 export const obtenerPeliculaPorId = async (id) => {
     try {
-        const docRef = doc(db, "peliculas", id); // Referencia al documento específico
-        const docSnap = await getDoc(docRef); // Obtener el documento
+        const docRef = doc(db, "peliculas", id); 
+        const docSnap = await getDoc(docRef); 
         
         if (docSnap.exists()) {
-            // Retornamos el objeto con el ID y los datos
             return { id: docSnap.id, ...docSnap.data() }; 
         } else {
-            // El documento no existe
             return null;
         }
     } catch (e) {
@@ -70,7 +65,6 @@ export const eliminarPelicula = async (id) => {
 export const actualizarPelicula = async (id, datosActualizados) => {
     try {
         const docRef = doc(db, "peliculas", id);
-        // updateDoc actualiza los campos que se le pasan sin sobrescribir el resto del documento
         await updateDoc(docRef, datosActualizados); 
         console.log(`Documento con ID ${id} actualizado exitosamente.`);
     } catch (e) {

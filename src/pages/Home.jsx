@@ -23,19 +23,18 @@ const Home = () => {
         };
 
         cargarPeliculas();
-    }, []); // El array vacío asegura que se ejecuta solo una vez al montar
+    }, []); 
 
     // ------------------- Renderizado Condicional -------------------
 
     if (loading) {
         return (
-            // Añadimos clases para altura completa de la ventana y centrado vertical/horizontal
             <Container className="text-center d-flex flex-column justify-content-center align-items-center" style={{ minHeight: '80vh' }}>
                 <Spinner
-                    animation="grow" // Cambiamos a animación 'grow' para un look diferente
+                    animation="grow" 
                     role="status"
-                    variant="primary" // Usamos el color primario (azul)
-                    style={{ width: '3rem', height: '3rem' }} // Hacemos el spinner más grande
+                    variant="primary" 
+                    style={{ width: '3rem', height: '3rem' }}
                 >
                     <span className="visually-hidden">Cargando...</span>
                 </Spinner>
@@ -73,14 +72,12 @@ const Home = () => {
             <h2 className="mb-4">🎬 Mi Colección de Películas</h2>
             <Row xs={1} md={2} lg={3} className="g-4">
                 {peliculas.map((pelicula) => (
-                    // Usamos el ID como key, que es el ID único de Firestore
                     <Col key={pelicula.id}>
                         <Card className="h-100 shadow-sm">
                             <Card.Img
                                 variant="top"
                                 src={pelicula.imagenUrl}
                                 alt={pelicula.titulo}
-                                // Estilo básico para controlar la altura de la imagen en la tarjeta
                                 style={{ height: '300px', objectFit: 'cover' }}
                             />
                             <Card.Body>

@@ -4,7 +4,7 @@ import { Container, Card, Button, Row, Col, Alert, Spinner } from 'react-bootstr
 import { obtenerPeliculaPorId, eliminarPelicula } from '../services/peliculas';
 
 const ItemDetail = () => {
-    const { id } = useParams(); // Obtenemos el ID de la URL
+    const { id } = useParams(); //  ID de la URL
     const navigate = useNavigate(); // Hook para redirigir
 
     const [pelicula, setPelicula] = useState(null);
@@ -30,7 +30,7 @@ const ItemDetail = () => {
         };
 
         cargarDetalle();
-    }, [id]); // Se ejecuta cada vez que el ID de la URL cambia
+    }, [id]); 
 
     // 2. Lógica para eliminar la película
     const handleEliminar = async () => {
@@ -38,7 +38,7 @@ const ItemDetail = () => {
             try {
                 await eliminarPelicula(id);
                 alert("¡Película eliminada con éxito!");
-                navigate("/"); // Redirigir al listado principal después de eliminar
+                navigate("/"); 
             } catch (e) {
                 alert("Hubo un error al intentar eliminar la película.");
                 console.error(e);
@@ -51,9 +51,9 @@ const ItemDetail = () => {
         return (
             <Container className="text-center d-flex flex-column justify-content-center align-items-center" style={{ minHeight: '80vh' }}>
                 <Spinner
-                    animation="border" // Mantenemos border, pero lo hacemos visible
+                    animation="border" 
                     role="status"
-                    variant="warning" // Usamos el color de advertencia (amarillo) para distinguirlo del home
+                    variant="warning" 
                     style={{ width: '3rem', height: '3rem' }}
                 >
                     <span className="visually-hidden">Cargando...</span>
@@ -74,10 +74,10 @@ const ItemDetail = () => {
         );
     }
 
-    // Si no hay error y no está cargando, mostramos el detalle
+    
     return (
         <Container className="my-5">
-            <div className="detail-container"> {/* 👈 AÑADE ESTE DIV */}
+            <div className="detail-container"> 
                 <Row>
                     {/* Columna de la imagen */}
                     <Col md={4} className="mb-4">
@@ -113,7 +113,7 @@ const ItemDetail = () => {
                         <p>{pelicula.reseña}</p>
 
                         <div className="mt-5 d-flex gap-3">
-                            {/* Botón de Editar (Preparación para el siguiente paso) */}
+                            {/* Botón de Editar */}
                             <Button
                                 as={Link}
                                 to={`/crear?editId=${pelicula.id}`}
@@ -122,7 +122,7 @@ const ItemDetail = () => {
                                 ✏️ Editar Película
                             </Button>
 
-                            {/* Botón de Eliminar (Operación DELETE) */}
+                            {/* Botón de Eliminar */}
                             <Button
                                 variant="danger"
                                 onClick={handleEliminar}
@@ -137,7 +137,7 @@ const ItemDetail = () => {
 
                     </Col>
                 </Row>
-            </div> {/* 👈 CIERRA EL DIV */}
+            </div> 
         </Container>
     );
 };

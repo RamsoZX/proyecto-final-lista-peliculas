@@ -23,10 +23,8 @@ const ItemForm = () => {
                 try {
                     const data = await obtenerPeliculaPorId(editId);
                     if (data) {
-                        // Rellenar el formulario con los datos existentes
                         reset({
                             ...data,
-                            // Aseguramos que los números no se envíen como nulos si son 0
                             año: data.año || '',
                             calificacion: data.calificacion || '',
                         });
@@ -47,7 +45,6 @@ const ItemForm = () => {
             };
             cargarDatos();
         }
-        // Si no es modo edición, terminamos de cargar inmediatamente
         if (!editId) {
             setIsDataLoading(false);
         }
@@ -57,7 +54,6 @@ const ItemForm = () => {
     const onSubmit = async (data) => {
         setLoading(true);
         try {
-            // Convertir los campos numéricos a tipo Number
             const datosParaGuardar = {
                 ...data,
                 año: Number(data.año),
@@ -73,7 +69,6 @@ const ItemForm = () => {
                     texto: '¡Película actualizada con éxito!'
                 });
 
-                // Redirigir a la vista de detalle después de actualizar
                 navigate(`/pelicula/${editId}`);
 
             } else {
@@ -84,7 +79,7 @@ const ItemForm = () => {
                     tipo: 'success',
                     texto: '¡Película creada con éxito! Puedes añadir otra.'
                 });
-                reset(); // Limpia el formulario solo después de CREAR
+                reset(); 
             }
 
         } catch (error) {
@@ -97,14 +92,12 @@ const ItemForm = () => {
         }
     };
 
-    // Renderizado Condicional del Spinner de Carga
     if (isDataLoading) {
         return (
-            // Estilo mejorado para centrado vertical y mayor visibilidad
             <Container className="text-center d-flex flex-column justify-content-center align-items-center" style={{ minHeight: '80vh' }}>
                 <Spinner
                     animation="border"
-                    variant="success" // Color verde para la carga de edición
+                    variant="success" 
                     style={{ width: '3rem', height: '3rem' }}
                 />
                 <p className="mt-2 fs-5 text-success">Cargando datos de la película...</p>
@@ -115,7 +108,6 @@ const ItemForm = () => {
     // Renderizado del Formulario
     return (
         <Container className="my-5">
-            {/* 👈 AÑADIMOS LA CLASE detail-container PARA COHERENCIA ESTÉTICA */}
             <div className="detail-container"> 
                 
                 <h2 className="mb-4">
@@ -244,14 +236,14 @@ const ItemForm = () => {
                 {/* Botón para volver al listado */}
                 <Button
                     as={Link}
-                    to={editId ? `/pelicula/${editId}` : "/"} // Vuelve al detalle en modo edición, o al listado en modo creación
+                    to={editId ? `/pelicula/${editId}` : "/"} 
                     variant="outline-secondary"
                     className="mt-4 ms-3"
                 >
                     {editId ? 'Cancelar Edición' : 'Volver al Listado'}
                 </Button>
 
-            </div> {/* Cierre del detail-container */}
+            </div> 
         </Container>
     );
 };

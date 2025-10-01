@@ -10,7 +10,6 @@ function App() {
     <>
       <Navbar />
       
-      {/* Aseguramos que el contenido ocupe al menos el alto de la pantalla */}
       <main className="min-vh-100">
         <Routes>
           {/* Ruteo Estático: Página Principal */}
@@ -22,7 +21,7 @@ function App() {
           {/* Ruteo Dinámico: Detalle de un ítem. El :id es el parámetro dinámico. */}
           <Route path="/pelicula/:id" element={<ItemDetail />} />
 
-          {/* Opcional pero recomendado: Manejo de ruta no encontrada (404) */}
+          {/* Opcional: Manejo de ruta no encontrada (404) */}
           <Route path="*" element={<div className="container mt-5"><h1>404 - Página no encontrada</h1></div>} />
         </Routes>
       </main>

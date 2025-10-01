@@ -1,8 +1,7 @@
-// Importa las funciones necesarias del SDK que instalamos
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
-// TODO: REEMPLAZA ESTE OBJETO CON TUS CREDENCIALES REALES DE FIREBASE
+//  CREDENCIALES DE FIREBASE
 const firebaseConfig = {
   apiKey: "AIzaSyDaXAP2IP8YZBxesYZrOs3dmqaDDqDhhKg",
   authDomain: "lista-peliculas-react.firebaseapp.com",
@@ -18,5 +17,5 @@ const app = initializeApp(firebaseConfig);
 // Inicializa Firestore y exporta la referencia
 export const db = getFirestore(app);
 
-// Opcional: para usar más tarde si fuera necesario
+// Exporta la app por si se necesita en otros archivos
 export default app;
